@@ -31,6 +31,7 @@ export async function POST(request: NextRequest) {
       textResult.concepts.map(async (concept) => {
         try {
           const imageResult = await generateProductImage({
+            prompt: `A professional cosmetic product image of ${concept.productName}. ${concept.description}. Key ingredients: ${concept.keyIngredients.join(', ')}. High quality, professional lighting, cosmetic product photography.`,
             productName: concept.productName,
             description: concept.description,
             keyIngredients: concept.keyIngredients,
