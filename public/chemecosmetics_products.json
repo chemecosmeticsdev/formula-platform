@@ -1,0 +1,686 @@
+{
+  "metadata": {
+    "scraped_at": "2025-06-30 15:36:40",
+    "source_website": "chemecosmetics.com",
+    "source_url": "https://chemecosmetics.com/product-category/cosmetics/",
+    "supplier_info": {
+      "name": "ChemeCosmetics",
+      "description": "ตัวแทนจัดจำหน่ายเคมีภัณฑ์ ขายเคมีภัณฑ์ สารตั้งต้นเครื่องสำอาง วัตถุดิบต่างๆ ที่ใช้ผลิตเครื่องสำอาง",
+      "established": "2021",
+      "location": "Bangkok, Thailand",
+      "contact": {
+        "phone": "083-751-9956",
+        "email": "info@chemecosmetics.com",
+        "address": "36-36/1 ซอยเฉลิมพระเกียรติ ร.9 ซอย 28 แยก 10 ถนน เฉลิมพระเกียรติ ร.9 แขวงดอกไม้ เขตประเวศ กรุงเทพฯ 10250"
+      }
+    },
+    "total_products": 14,
+    "currency": "THB",
+    "language": "Thai",
+    "enhanced_at": "2025-06-30 15:39:11",
+    "ai_ready": true
+  },
+  "product_categories": [
+    "น้ำมันธรรมชาติ (Natural Oil)",
+    "น้ำมันหอมระเหย (Essential Oil)",
+    "พอลิเมอร์ (Polymer)",
+    "สารก่อเจล (Gelling Agent)",
+    "สารกันเสีย (Preservative)",
+    "สารกันแดด (Sunscreen)",
+    "สารทำความสะอาด (Surfactant)",
+    "สารออกฤทธิ์ (Active)",
+    "สารให้ความชุ่มชื้น (Emollient)",
+    "สารเพิ่มความข้น (Thickener)",
+    "หัวน้ำหอม (Fragrance)",
+    "เมคอัพ (Makeup)"
+  ],
+  "common_applications": [
+    "เครื่องสำอาง (Cosmetics)",
+    "ผลิตภัณฑ์ดูแลผิว (Skincare)",
+    "ผลิตภัณฑ์ดูแลเส้นผม (Hair care)",
+    "ผลิตภัณฑ์ดูแลช่องปาก (Oral care)",
+    "ครีม (Creams)",
+    "โลชั่น (Lotions)",
+    "เซรั่ม (Serums)",
+    "แชมพู (Shampoo)",
+    "ยาสีฟัน (Toothpaste)"
+  ],
+  "common_properties": [
+    "ต้านการอักเสบ (Anti-inflammatory)",
+    "ต้านอนุมูลอิสระ (Antioxidant)",
+    "ลดริ้วรอย (Anti-wrinkle)",
+    "ชะลอวัย (Anti-aging)",
+    "ความชุ่มชื้น (Moisturizing)",
+    "ทำความสะอาด (Cleansing)",
+    "ปลอบประโลม (Soothing)",
+    "กระจ่างใส (Brightening)",
+    "ควบคุมความหนืด (Viscosity control)"
+  ],
+  "products": [
+    {
+      "name": "Borneol (พิมเสน/บอร์นีออล) สารสกัดพิมเสนเกรดพรีเมี่ยม กลิ่นหอมธรรมชาติ สำหรับเครื่องสำอางและผลิตภัณฑ์ดูแลผิว ต้านการอักเสบ ปลอบประโลม ให้ความเย็นสดชื่น",
+      "description": "",
+      "price_range": {
+        "min_price": "181.90",
+        "max_price": "34,775.00",
+        "currency": "THB"
+      },
+      "sold_count": 1,
+      "properties": [
+        {
+          "thai": "ต้านการอักเสบ",
+          "english": "Anti-inflammatory"
+        },
+        {
+          "thai": "ปลอบประโลม",
+          "english": "Soothing"
+        },
+        {
+          "thai": "ความเย็นสดชื่น",
+          "english": "Cooling"
+        }
+      ],
+      "applications": [
+        {
+          "thai": "เครื่องสำอาง",
+          "english": "Cosmetics"
+        },
+        {
+          "thai": "ผลิตภัณฑ์ดูแลผิว",
+          "english": "Skincare products"
+        }
+      ],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/borneol/",
+      "full_description": "",
+      "technical_specifications": {},
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [
+          "extract",
+          "natural",
+          "soothing",
+          "anti-inflammatory"
+        ],
+        "use_cases": [
+          "Natural and organic cosmetics"
+        ],
+        "compatibility_notes": "",
+        "recommendation_score": 85
+      }
+    },
+    {
+      "name": "MC-DIS 100 (Dispersant, ดิสเพอร์แซนท์) สารช่วยกระจายสารกันแดด (TiO2, ZnO) ไทเทเนียมและซิงก์ออกไซด์ กับ ผงสีต่างๆ (Iron Oxide) ป้องกันการแยกชั้นและเพิ่มความเนียนละเอียด",
+      "description": "",
+      "price_range": {
+        "min_price": "294.25",
+        "max_price": "56,175.00",
+        "currency": "THB"
+      },
+      "sold_count": 0,
+      "properties": [
+        {
+          "thai": "ป้องกันการแยกชั้น",
+          "english": "Anti-separation"
+        },
+        {
+          "thai": "เพิ่มความเนียนละเอียด",
+          "english": "Smoothing"
+        }
+      ],
+      "applications": [],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/mc-dis-100/",
+      "full_description": "",
+      "technical_specifications": {},
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [
+          "sunscreen"
+        ],
+        "use_cases": [
+          "Sun protection products"
+        ],
+        "compatibility_notes": "",
+        "recommendation_score": 40
+      }
+    },
+    {
+      "name": "Pepsensyal BC10230 (Wrinkle Reduction Complex) สารสกัดเปปไทด์นวัตกรรมใหม่ เทคโนโลยี Bio-inspired peptide ฟื้นฟูผิวแบบ 360 องศาลึกระดับเซลล์ ลดเลือนริ้วรอย ชะลอวัย เห็นผลลัพธ์ได้ชัดใน 14 วัน",
+      "description": "",
+      "price_range": {
+        "min_price": "321.00",
+        "max_price": "42,800.00",
+        "currency": "THB"
+      },
+      "sold_count": 0,
+      "properties": [
+        {
+          "thai": "ลดเลือนริ้วรอย",
+          "english": "Anti-wrinkle"
+        },
+        {
+          "thai": "ชะลอวัย",
+          "english": "Anti-aging"
+        },
+        {
+          "thai": "ฟื้นฟูผิว",
+          "english": "Skin repair"
+        }
+      ],
+      "applications": [],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง",
+        "เปปไทด์"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/pepsensyal-bc10230/",
+      "full_description": "",
+      "technical_specifications": {
+        "น้ำหนัก": "5 g, 10 g, 50 g, 100 g, 500 g, 1 kg"
+      },
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [
+          "anti-aging",
+          "peptide",
+          "extract"
+        ],
+        "use_cases": [
+          "Anti-aging skincare products"
+        ],
+        "compatibility_notes": "",
+        "recommendation_score": 50
+      }
+    },
+    {
+      "name": "Oximony BC10187 สารสกัดนวัตกรรมการยืดอายุผิวที่แท้จริง ด้วยเทคโนโลยี Pro-Taurine ครั้งแรกในโลก ที่ช่วยให้ผิวกลับมามีชีวิตชีวา สว่างใส และดูอ่อนเยาว์ในระดับเซลล์ ต้านการเสื่อมสภาพของผิว",
+      "description": "",
+      "price_range": {
+        "min_price": "481.50",
+        "max_price": "74,900.00",
+        "currency": "THB"
+      },
+      "sold_count": 1,
+      "properties": [],
+      "applications": [],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/oximony/",
+      "full_description": "",
+      "technical_specifications": {
+        "น้ำหนัก": "5 g, 10 g, 50 g, 100 g, 500 g, 1 kg"
+      },
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [
+          "extract"
+        ],
+        "use_cases": [],
+        "compatibility_notes": "",
+        "recommendation_score": 60
+      }
+    },
+    {
+      "name": "PseudOasis (ซูโดโอเอซิส) สารสกัดจุลินทรีย์ขั้วโลก (นางฟ้าขั้วโลก) ช่วยลดอุณหภูมิผิวทันที 6°C ผิวเย็นสบาย ชุ่มชื้น และกระจ่างใส จากพลังธรรมชาติขั้วโลกเหนือ",
+      "description": "",
+      "price_range": {
+        "min_price": "267.50",
+        "max_price": "74,900.00",
+        "currency": "THB"
+      },
+      "sold_count": 0,
+      "properties": [
+        {
+          "thai": "กระจ่างใส",
+          "english": "Brightening"
+        }
+      ],
+      "applications": [],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/pseudoasis/",
+      "full_description": "",
+      "technical_specifications": {},
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [
+          "natural",
+          "extract",
+          "brightening"
+        ],
+        "use_cases": [
+          "Natural and organic cosmetics"
+        ],
+        "compatibility_notes": "",
+        "recommendation_score": 40
+      }
+    },
+    {
+      "name": "Genuvisco CG-131 (Carageenan) คาราจีแนน เกรดคอสเมติก วัตถุดิบธรรมชาติสำหรับเครื่องสำอาง ให้เนื้อสัมผัสเรียบลื่น ความใส และคุณภาพระดับพรีเมียม",
+      "description": "",
+      "price_range": {
+        "min_price": "254.13",
+        "max_price": "93,625.00",
+        "currency": "THB"
+      },
+      "sold_count": 0,
+      "properties": [],
+      "applications": [
+        {
+          "thai": "เครื่องสำอาง",
+          "english": "Cosmetics"
+        }
+      ],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/genuvisco-cg-131/",
+      "full_description": "",
+      "technical_specifications": {},
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [
+          "natural"
+        ],
+        "use_cases": [
+          "Natural and organic cosmetics"
+        ],
+        "compatibility_notes": "",
+        "recommendation_score": 40
+      }
+    },
+    {
+      "name": "Kelcogel CG-LA (Gellan Gum, Low Acyl) เจลลานกัม คอสเมติกเกรด สร้างเจลใสแข็ง ให้เนื้อสัมผัสเด้ง ควบคุมความหนืดได้ดี",
+      "description": "",
+      "price_range": {
+        "min_price": "267.50",
+        "max_price": "40,125.00",
+        "currency": "THB"
+      },
+      "sold_count": 2,
+      "properties": [
+        {
+          "thai": "ควบคุมความหนืด",
+          "english": "Viscosity control"
+        }
+      ],
+      "applications": [],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง",
+        "สารเพิ่มความข้น"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/kelcogel-cg-la/",
+      "full_description": "",
+      "technical_specifications": {},
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [],
+        "use_cases": [],
+        "compatibility_notes": "",
+        "recommendation_score": 60
+      }
+    },
+    {
+      "name": "Everlast Floral Water น้ำดอกอิมมอร์เทลบริสุทธิ์ 100% จากดอกอิมมอร์เทลฝรั่งเศส ฟื้นฟูผิวเสียหาย ลดริ้วรอย ต้านอนุมูลอิสระ เพื่อผิวที่ดูอ่อนเยาว์และสุขภาพดี",
+      "description": "",
+      "price_range": {
+        "min_price": "321.00",
+        "max_price": "42,800.00",
+        "currency": "THB"
+      },
+      "sold_count": 0,
+      "properties": [
+        {
+          "thai": "ฟื้นฟูผิว",
+          "english": "Skin repair"
+        },
+        {
+          "thai": "ต้านอนุมูลอิสระ",
+          "english": "Antioxidant"
+        }
+      ],
+      "applications": [],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง",
+        "น้ำดอกไม้"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/everlast/",
+      "full_description": "",
+      "technical_specifications": {
+        "น้ำหนัก": "100 g, 500 g, 1 kg, 5 kg, 20 kg"
+      },
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [
+          "anti-aging"
+        ],
+        "use_cases": [
+          "Anti-aging skincare products"
+        ],
+        "compatibility_notes": "",
+        "recommendation_score": 40
+      }
+    },
+    {
+      "name": "Edeta BS (EDTA)",
+      "description": "",
+      "price_range": {
+        "min_price": "267.50",
+        "max_price": "10,700.00",
+        "currency": "THB"
+      },
+      "sold_count": 0,
+      "properties": [],
+      "applications": [],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง",
+        "สารคีเลต"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/edeta-bs/",
+      "full_description": "",
+      "technical_specifications": {},
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [],
+        "use_cases": [],
+        "compatibility_notes": "",
+        "recommendation_score": 40
+      }
+    },
+    {
+      "name": "WeylClean SAS 93 (Hostapur SAS93) สารลดแรงตึงผิวแอนไอออนิกเข้มข้นสูง ประสิทธิภาพการทำความสะอาดเหนือชั้น รูปแบบเพลทส์ใช้งานสะดวก ย่อยสลายได้เพื่อโลกที่สะอาดและยั่งยืน",
+      "description": "",
+      "price_range": {
+        "min_price": "267.50",
+        "max_price": "5,350.00",
+        "currency": "THB"
+      },
+      "sold_count": 0,
+      "properties": [
+        {
+          "thai": "ทำความสะอาด",
+          "english": "Cleansing"
+        },
+        {
+          "thai": "ย่อยสลายได้",
+          "english": "Biodegradable"
+        }
+      ],
+      "applications": [],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/weylclean-sas-93/",
+      "full_description": "",
+      "technical_specifications": {
+        "น้ำหนัก": "1 kg, 5 kg, 25 kg"
+      },
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [
+          "cleansing"
+        ],
+        "use_cases": [
+          "Facial cleansers and body washes"
+        ],
+        "compatibility_notes": "",
+        "recommendation_score": 40
+      }
+    },
+    {
+      "name": "Gaïaline (ไกอาไลน์) สารสกัดลินสีดเข้มข้นจากฝรั่งเศส (French Linseed Oil) สารชะลอวัยปกป้องเทโลเมียร์ (Telomere) เทคโนโลยี Anti-Aging ล้ำสมัย เพื่อผิวเยาว์วัย ยืดอายุเซลล์ +120% เพื่อผิวและเส้นผมแข็งแรง",
+      "description": "",
+      "price_range": {
+        "min_price": "374.50",
+        "max_price": "32,100.00",
+        "currency": "THB"
+      },
+      "sold_count": 1,
+      "properties": [
+        {
+          "thai": "ชะลอวัย",
+          "english": "Anti-aging"
+        }
+      ],
+      "applications": [
+        {
+          "thai": "เส้นผม",
+          "english": "Hair care"
+        }
+      ],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง",
+        "น้ำมันธรรมชาติ"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "ai_metadata": {
+        "searchable_keywords": [
+          "anti-aging",
+          "extract"
+        ],
+        "use_cases": [
+          "Anti-aging skincare products"
+        ],
+        "compatibility_notes": "",
+        "recommendation_score": 35
+      }
+    },
+    {
+      "name": "Keldent (Xanthan Gum) แซนแทนกัม สารเพิ่มความหนืดจากธรรมชาติ เหมาะสำหรับผลิตภัณฑ์ดูแลช่องปาก โดยเฉพาะยาสีฟัน",
+      "description": "",
+      "price_range": {
+        "min_price": "262.15",
+        "max_price": "35,310.00",
+        "currency": "THB"
+      },
+      "sold_count": 1,
+      "properties": [],
+      "applications": [
+        {
+          "thai": "ยาสีฟัน",
+          "english": "Toothpaste"
+        },
+        {
+          "thai": "ผลิตภัณฑ์ดูแลช่องปาก",
+          "english": "Oral care products"
+        }
+      ],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง",
+        "สารเพิ่มความข้น"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/keldent/",
+      "full_description": "",
+      "technical_specifications": {},
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [
+          "natural"
+        ],
+        "use_cases": [
+          "Natural and organic cosmetics"
+        ],
+        "compatibility_notes": "",
+        "recommendation_score": 60
+      }
+    },
+    {
+      "name": "Genuvisco CG-131 (Carageenan)",
+      "description": "คาราจีแนน เกรดคอสเมติก วัตถุดิบธรรมชาติสำหรับเครื่องสำอาง ให้เนื้อสัมผัสเรียบลื่น ความใส และคุณภาพระดับพรีเมียม",
+      "price_range": {
+        "min_price": "254.13",
+        "max_price": "93,625.00",
+        "currency": "THB"
+      },
+      "sold_count": 0,
+      "properties": [
+        {
+          "thai": "เนื้อสัมผัสเรียบลื่น",
+          "english": "Smooth texture"
+        },
+        {
+          "thai": "ความใส",
+          "english": "Transparency"
+        }
+      ],
+      "applications": [
+        {
+          "thai": "เครื่องสำอาง",
+          "english": "Cosmetics"
+        }
+      ],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง",
+        "สารเพิ่มความข้น"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/genuvisco-cg-131/",
+      "full_description": "",
+      "technical_specifications": {},
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [
+          "natural"
+        ],
+        "use_cases": [
+          "Natural and organic cosmetics"
+        ],
+        "compatibility_notes": "",
+        "recommendation_score": 40
+      }
+    },
+    {
+      "name": "Kelcogel CG-LA (Gellan Gum, Low Acyl)",
+      "description": "เจลลานกัม คอสเมติกเกรด สร้างเจลใสแข็ง ให้เนื้อสัมผัสเด้ง ควบคุมความหนืดได้ดี",
+      "price_range": {
+        "min_price": "267.50",
+        "max_price": "40,125.00",
+        "currency": "THB"
+      },
+      "sold_count": 2,
+      "properties": [
+        {
+          "thai": "สร้างเจลใสแข็ง",
+          "english": "Creates clear hard gel"
+        },
+        {
+          "thai": "เนื้อสัมผัสเด้ง",
+          "english": "Bouncy texture"
+        },
+        {
+          "thai": "ควบคุมความหนืด",
+          "english": "Viscosity control"
+        }
+      ],
+      "applications": [
+        {
+          "thai": "เครื่องสำอาง",
+          "english": "Cosmetics"
+        }
+      ],
+      "categories": [
+        "วัตถุดิบเครื่องสำอาง",
+        "สารก่อเจล"
+      ],
+      "source_language": "Thai",
+      "supplier": "ChemeCosmetics",
+      "product_type": "Cosmetic Raw Material",
+      "url": "https://chemecosmetics.com/product/kelcogel-cg-la/",
+      "full_description": "",
+      "technical_specifications": {},
+      "usage_instructions": "",
+      "ingredients": [],
+      "benefits": [],
+      "ai_metadata": {
+        "searchable_keywords": [],
+        "use_cases": [],
+        "compatibility_notes": "",
+        "recommendation_score": 70
+      }
+    }
+  ],
+  "ai_recommendation_guidelines": {
+    "scoring_factors": [
+      "Product popularity (sold_count)",
+      "Number of beneficial properties",
+      "Availability of detailed information",
+      "Price accessibility",
+      "Keyword relevance"
+    ],
+    "use_case_mapping": {
+      "anti-aging": "Products with anti-aging, wrinkle reduction properties",
+      "moisturizing": "Hydrating and moisturizing ingredients",
+      "cleansing": "Surfactants and cleansing agents",
+      "natural": "Plant-based and natural extracts",
+      "sensitive_skin": "Soothing and anti-inflammatory ingredients"
+    },
+    "recommendation_logic": "Higher scores indicate better suitability for AI recommendations based on popularity, properties, and use cases"
+  }
+}

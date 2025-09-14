@@ -1,0 +1,77 @@
+{
+  "common": {
+    "generate": "Generate",
+    "generating": "Generating...",
+    "loading": "Loading...",
+    "error": "Error",
+    "tryAgain": "Try Again",
+    "backToGenerate": "Back to Generate",
+    "newConcepts": "Generate New Concepts"
+  },
+  "home": {
+    "title": "The Future of {formulation} is Here",
+    "formulation": "Formulation",
+    "subtitle": "Instantly generate innovative product concepts with our AI-powered {cosmetics} platform",
+    "cosmetics": "cosmetics",
+    "generateButton": "GENERATE FORMULA",
+    "features": {
+      "aiResearch": {
+        "title": "AI-Powered Research",
+        "description": "Advanced AI algorithms analyze ingredient databases to create optimal formulations"
+      },
+      "targetedSolutions": {
+        "title": "Targeted Solutions",
+        "description": "Generate precise product concepts tailored to specific market needs and requirements"
+      },
+      "innovationReady": {
+        "title": "Innovation Ready",
+        "description": "Stay ahead with cutting-edge formulations and emerging ingredient technologies"
+      }
+    }
+  },
+  "generate": {
+    "title": "Describe Your Ideal Product Concept",
+    "subtitle": "Provide details about your desired cosmetic product, target audience, key benefits, and any specific requirements to generate AI-powered formulation concepts.",
+    "form": {
+      "label": "Product Specifications",
+      "placeholder": "Example: A lightweight, hydrating daily moisturizer for sensitive skin with SPF 30 and anti-pollution claims. Target demographic: urban millennials aged 25-35. Key requirements: fragrance-free, reef-safe sunscreen, suitable for all skin tones...",
+      "helpText": "Be as specific as possible to get the best AI-generated recommendations.",
+      "generateButton": "GENERATE CONCEPTS",
+      "generating": "Generating Concepts..."
+    },
+    "tips": {
+      "title": "💡 Pro Tips for Better Results:",
+      "items": [
+        "Include target demographic and skin type",
+        "Specify desired product format (cream, serum, lotion, etc.)",
+        "Mention key benefits and claims you want to achieve",
+        "Note any ingredients to avoid or include",
+        "Describe usage occasion (morning, evening, daily, etc.)"
+      ]
+    }
+  },
+  "results": {
+    "title": "AI-Generated Product Concepts",
+    "basedOn": "Based on your specifications:",
+    "loading": {
+      "title": "Generating AI-Powered Concepts...",
+      "subtitle": "Our AI is analyzing your requirements and creating innovative formulations."
+    },
+    "error": {
+      "title": "Error Loading Results",
+      "tryAgain": "Try Again"
+    },
+    "concept": {
+      "keyClaims": "Key Claims",
+      "keyIngredients": "Key Ingredients"
+    },
+    "empty": {
+      "message": "No product concepts were generated. Please try again with different specifications.",
+      "tryAgain": "Try Again"
+    }
+  },
+  "language": {
+    "switch": "Language",
+    "switchTo": "Switch to {language}"
+  }
+}
