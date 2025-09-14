@@ -17,7 +17,12 @@ const validateEnvironment = () => {
 }
 
 // Validate environment on module load
-validateEnvironment()
+try {
+  validateEnvironment()
+} catch (error) {
+  console.error('Environment validation failed during module load:', error)
+  // Don't throw here to allow the module to load, but log the issue
+}
 
 // Create a Bedrock Runtime client for US East 1 (required for Bedrock models)
 export const bedrockClient = new BedrockRuntimeClient({

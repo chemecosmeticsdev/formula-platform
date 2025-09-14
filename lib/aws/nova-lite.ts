@@ -68,9 +68,22 @@ export async function generateWithNovaLite(
       console.error('Error name:', error.name)
       console.error('Error message:', error.message)
       console.error('Error stack:', error.stack)
+
+      // Log specific AWS error details
+      if ('Code' in error) {
+        console.error('AWS Error Code:', (error as any).Code)
+      }
+      if ('$metadata' in error) {
+        console.error('AWS Metadata:', (error as any).$metadata)
+      }
     }
 
-    throw new Error(`Failed to generate with Nova Lite: ${error instanceof Error ? error.message : 'Unknown error'}`)
+    // Include more specific error details in the thrown error
+    const errorDetails = error instanceof Error ?
+      `${error.name}: ${error.message}` :
+      'Unknown error'
+
+    throw new Error(`Failed to generate with Nova Lite: ${errorDetails}`)
   }
 }
 
