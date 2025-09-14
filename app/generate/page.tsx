@@ -120,7 +120,7 @@ export default function GeneratePage() {
             <FormattedMessage id="generate.tips.title" />
           </h3>
           <ul className="space-y-2 text-teal-800">
-            {(intl.formatMessage({ id: 'generate.tips.items' }, { returnObjects: true }) as string[]).map((tip: string, index: number) => (
+            {(intl.formatMessage({ id: 'generate.tips.items' }, { returnObjects: true }) as unknown as string[]).map((tip: string, index: number) => (
               <li key={index}>• {tip}</li>
             ))}
           </ul>
