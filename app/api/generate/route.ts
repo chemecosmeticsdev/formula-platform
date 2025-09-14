@@ -53,9 +53,9 @@ export async function POST(request: NextRequest) {
     )
 
     // Extract successful results
-    const finalConcepts = conceptsWithImages.map(result =>
-      result.status === 'fulfilled' ? result.value : null
-    ).filter(Boolean)
+    const finalConcepts = conceptsWithImages
+      .map(result => result.status === 'fulfilled' ? result.value : null)
+      .filter((concept): concept is NonNullable<typeof concept> => concept !== null)
 
     // Store in session storage
     const submissionId = SessionStorage.storeSubmission(
