@@ -3,15 +3,7 @@
 import { ReactNode, useEffect, useState } from 'react'
 import { IntlProvider } from 'react-intl'
 import { defaultLocale, type Locale } from '../lib/i18n/config'
-
-// Import locale data
-import enMessages from '../lib/i18n/locales/en.json'
-import thMessages from '../lib/i18n/locales/th.json'
-
-const messages = {
-  en: enMessages,
-  th: thMessages,
-} as const
+import { getMessages } from '../lib/i18n/messages'
 
 interface CustomIntlProviderProps {
   children: ReactNode
@@ -38,11 +30,12 @@ export default function CustomIntlProvider({ children }: CustomIntlProviderProps
 
   // During SSR, use default locale to avoid hydration mismatch
   const currentLocale = mounted ? locale : defaultLocale
+  const messages = getMessages(currentLocale)
 
   return (
     <IntlProvider
       locale={currentLocale}
-      messages={messages[currentLocale] as any}
+      messages={messages}
       defaultLocale={defaultLocale}
       onError={(error) => {
         // Log errors but don't throw to avoid breaking the app
