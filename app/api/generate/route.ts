@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
       count: finalConcepts.length,
       provider: {
         text: textResult.provider,
-        images: 'nova-canvas'
+        images: 'titan-image' // Default image provider
       }
     })
 

@@ -13,7 +13,7 @@ export interface ImageGenerationRequest {
 export interface ImageGenerationResponse {
   imageBase64: string
   seed?: number
-  provider: 'nova-canvas' | 'google-nanobanana'
+  provider: 'nova-canvas' | 'titan-image' | 'google-nanobanana'
   metadata?: any
 }
 
@@ -69,6 +69,52 @@ class NovaCanvasProvider implements ImageProvider {
   }
 }
 
+// Titan Image Provider
+class TitanImageProvider implements ImageProvider {
+  name = 'titan-image'
+
+  async generateImage(request: ImageGenerationRequest): Promise<ImageGenerationResponse> {
+    if (request.productName && request.description && request.keyIngredients) {
+      // Use the cosmetics-specific function
+      const { generateCosmeticsProductImageWithTitan } = await import('../aws/titan-image')
+      const result = await generateCosmeticsProductImageWithTitan(
+        request.productName,
+        request.description,
+        request.keyIngredients,
+        request.language
+      )
+
+      return {
+        imageBase64: result.imageBase64,
+        seed: result.seed,
+        provider: 'titan-image',
+        metadata: {
+          inputTokens: result.inputTokens,
+          outputTokens: result.outputTokens
+        }
+      }
+    } else {
+      // Use direct prompt
+      const { generateImageWithTitan } = await import('../aws/titan-image')
+      const result = await generateImageWithTitan({
+        prompt: request.prompt,
+        width: request.width,
+        height: request.height
+      })
+
+      return {
+        imageBase64: result.imageBase64,
+        seed: result.seed,
+        provider: 'titan-image',
+        metadata: {
+          inputTokens: result.inputTokens,
+          outputTokens: result.outputTokens
+        }
+      }
+    }
+  }
+}
+
 // Google Nanobanana Provider (Future implementation)
 class GoogleNanobananaProvider implements ImageProvider {
   name = 'google-nanobanana'
@@ -103,11 +149,13 @@ class GoogleNanobananaProvider implements ImageProvider {
 // Provider Registry
 const providers = {
   'nova-canvas': new NovaCanvasProvider(),
+  'titan-image': new TitanImageProvider(),
   'google-nanobanana': new GoogleNanobananaProvider(),
 }
 
 // Configuration - easily switch between providers
-const DEFAULT_PROVIDER: keyof typeof providers = 'nova-canvas'
+// Use Titan as default for better compatibility
+const DEFAULT_PROVIDER: keyof typeof providers = 'titan-image'
 
 export async function generateProductImage(
   request: ImageGenerationRequest,
@@ -124,10 +172,17 @@ export async function generateProductImage(
   } catch (error) {
     console.error(`Image generation failed with ${provider.name}:`, error)
 
-    // Fallback to Nova Canvas if other provider fails
-    if (providerName !== 'nova-canvas') {
-      console.log('Falling back to Nova Canvas...')
-      return await providers['nova-canvas'].generateImage(request)
+    // Fallback to Titan Image if other provider fails, then Nova Canvas
+    if (providerName !== 'titan-image') {
+      console.log('Falling back to Titan Image Generator...')
+      try {
+        return await providers['titan-image'].generateImage(request)
+      } catch (titanError) {
+        console.log('Titan also failed, trying Nova Canvas...')
+        if (providerName !== 'nova-canvas') {
+          return await providers['nova-canvas'].generateImage(request)
+        }
+      }
     }
 
     throw error
@@ -135,4 +190,4 @@ export async function generateProductImage(
 }
 
 // Export providers for direct access if needed
-export { NovaCanvasProvider, GoogleNanobananaProvider, providers }
+export { NovaCanvasProvider, TitanImageProvider, GoogleNanobananaProvider, providers }

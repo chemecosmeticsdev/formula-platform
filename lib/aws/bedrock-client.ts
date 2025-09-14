@@ -28,10 +28,23 @@ export const bedrockClient = new BedrockRuntimeClient({
   },
 })
 
-// Available AWS Nova models
-export const NOVA_MODELS = {
-  LITE: 'amazon.nova-lite-v1:0',
-  CANVAS: 'amazon.nova-canvas-v1:0'
+// Available AWS models
+export const AWS_MODELS = {
+  // Nova models
+  NOVA_LITE: 'amazon.nova-lite-v1:0',
+  NOVA_CANVAS: 'amazon.nova-canvas-v1:0',
+  // Titan models
+  TITAN_TEXT_G1_EXPRESS: 'amazon.titan-text-express-v1',
+  TITAN_IMAGE_G1: 'amazon.titan-image-generator-v1',
+  // Claude models (if needed)
+  CLAUDE_3_SONNET: 'anthropic.claude-3-sonnet-20240229-v1:0',
 } as const
 
+// Legacy Nova models export for backward compatibility
+export const NOVA_MODELS = {
+  LITE: AWS_MODELS.NOVA_LITE,
+  CANVAS: AWS_MODELS.NOVA_CANVAS
+} as const
+
+export type AWSModel = typeof AWS_MODELS[keyof typeof AWS_MODELS]
 export type NovaModel = typeof NOVA_MODELS[keyof typeof NOVA_MODELS]
