@@ -1,4 +1,5 @@
 // Text Generation Service - Centralized interface for different AI models
+import { lambdaBedrockProxy } from './lambda-bedrock-proxy'
 
 export interface ProductConcept {
   productName: string
@@ -101,13 +102,38 @@ class NovaLiteProvider implements TextProvider {
   }
 }
 
+// Lambda Proxy Provider (Routes through working Lambda function)
+class LambdaProxyProvider implements TextProvider {
+  name = 'lambda-proxy'
+
+  async generateConcepts(request: TextGenerationRequest): Promise<TextGenerationResponse> {
+    try {
+      console.log('Using Lambda proxy provider...')
+      const result = await lambdaBedrockProxy.generateConcepts({
+        productSpec: request.productSpec,
+        language: request.language || 'en'
+      })
+
+      return {
+        concepts: result.concepts,
+        provider: 'lambda-proxy',
+        metadata: result.metadata
+      }
+    } catch (error) {
+      console.error('Lambda proxy generation error:', error)
+      throw new Error(`Failed to generate concepts via Lambda proxy: ${error instanceof Error ? error.message : 'Unknown error'}`)
+    }
+  }
+}
+
 // Provider Registry
 const providers = {
   'nova-lite': new NovaLiteProvider(),
+  'lambda-proxy': new LambdaProxyProvider(),
 }
 
-// Configuration
-const DEFAULT_PROVIDER: keyof typeof providers = 'nova-lite'
+// Configuration - Use Lambda proxy first as it's proven to work
+const DEFAULT_PROVIDER: keyof typeof providers = 'lambda-proxy'
 
 export async function generateProductConcepts(
   request: TextGenerationRequest,
@@ -123,4 +149,4 @@ export async function generateProductConcepts(
 }
 
 // Export providers for direct access if needed
-export { NovaLiteProvider, providers }
+export { NovaLiteProvider, LambdaProxyProvider, providers }

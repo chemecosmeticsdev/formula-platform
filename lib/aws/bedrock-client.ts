@@ -24,14 +24,32 @@ try {
   // Don't throw here to allow the module to load, but log the issue
 }
 
-// Create a Bedrock Runtime client for US East 1 (required for Bedrock models)
-export const bedrockClient = new BedrockRuntimeClient({
-  region: process.env.BEDROCK_REGION || 'us-east-1',
-  credentials: {
-    accessKeyId: process.env.BEDROCK_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.BEDROCK_SECRET_ACCESS_KEY!,
-  },
-})
+// Create a Bedrock Runtime client with smart credential handling
+const createBedrockClient = () => {
+  const clientConfig: any = {
+    region: process.env.BEDROCK_REGION || 'us-east-1',
+  }
+
+  // Only add explicit credentials if running locally
+  const isLocalDevelopment = process.env.NODE_ENV !== 'production' ||
+    (!process.env.AWS_EXECUTION_ENV && !process.env.LAMBDA_RUNTIME_DIR)
+
+  if (process.env.BEDROCK_ACCESS_KEY_ID &&
+      process.env.BEDROCK_SECRET_ACCESS_KEY &&
+      isLocalDevelopment) {
+    console.log('Using explicit credentials for local development')
+    clientConfig.credentials = {
+      accessKeyId: process.env.BEDROCK_ACCESS_KEY_ID!,
+      secretAccessKey: process.env.BEDROCK_SECRET_ACCESS_KEY!,
+    }
+  } else {
+    console.log('Using AWS default credential provider chain')
+  }
+
+  return new BedrockRuntimeClient(clientConfig)
+}
+
+export const bedrockClient = createBedrockClient()
 
 // Available AWS models
 export const AWS_MODELS = {
