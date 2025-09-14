@@ -149,6 +149,5 @@ export class SessionStorage {
   }
 }
 
-// Export the storage instance and types
+// Export the storage instance
 export default SessionStorage
-export type { StoredConcept, StoredSubmission }
