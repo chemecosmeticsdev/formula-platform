@@ -1,25 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { bedrockClient } from '../../../lib/aws/bedrock-client'
-import { ListFoundationModelsCommand } from '@aws-sdk/client-bedrock-runtime'
+import { bedrockClient, NOVA_MODELS } from '../../../lib/aws/bedrock-client'
 
 export async function GET(request: NextRequest) {
   console.log('=== Testing AWS Bedrock Connection ===')
 
   try {
-    // Test basic connection by listing available models
-    const command = new ListFoundationModelsCommand({})
-    console.log('Sending ListFoundationModels command...')
+    // Test basic connection by trying to use Nova Lite model
+    const { generateWithNovaLite } = await import('../../../lib/aws/nova-lite')
 
-    const response = await bedrockClient.send(command)
+    console.log('Testing Nova Lite connection...')
+
+    // Simple test message
+    const response = await generateWithNovaLite({
+      messages: [
+        { role: 'user', content: 'Say "test successful"' }
+      ],
+      temperature: 0.1,
+      maxTokens: 10
+    })
+
     console.log('Response received:', {
-      httpStatusCode: response.$metadata.httpStatusCode,
-      modelCount: response.modelSummaries?.length || 0
+      contentLength: response.content.length,
+      inputTokens: response.inputTokens,
+      outputTokens: response.outputTokens
     })
 
     return NextResponse.json({
       success: true,
       message: 'AWS Bedrock connection successful',
-      modelCount: response.modelSummaries?.length || 0,
+      modelId: NOVA_MODELS.LITE,
+      testResponse: response.content,
       region: process.env.BEDROCK_REGION || 'us-east-1'
     })
 
