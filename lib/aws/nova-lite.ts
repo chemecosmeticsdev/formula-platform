@@ -39,16 +39,37 @@ export async function generateWithNovaLite(
   })
 
   try {
+    console.log('Sending request to Nova Lite...')
+    console.log('Model ID:', NOVA_MODELS.LITE)
+    console.log('Payload:', JSON.stringify(payload, null, 2))
+
     const response = await bedrockClient.send(command)
+    console.log('Response status:', response.$metadata.httpStatusCode)
+
     const responseBody = JSON.parse(new TextDecoder().decode(response.body))
+    console.log('Response body:', JSON.stringify(responseBody, null, 2))
+
+    const content = responseBody.output?.message?.content || responseBody.content || ''
+
+    if (!content) {
+      console.error('No content received from Nova Lite')
+      throw new Error('No content received from Nova Lite')
+    }
 
     return {
-      content: responseBody.output?.message?.content || responseBody.content || '',
+      content,
       inputTokens: responseBody.usage?.input_tokens || 0,
       outputTokens: responseBody.usage?.output_tokens || 0,
     }
   } catch (error) {
     console.error('Nova Lite generation error:', error)
+
+    if (error instanceof Error) {
+      console.error('Error name:', error.name)
+      console.error('Error message:', error.message)
+      console.error('Error stack:', error.stack)
+    }
+
     throw new Error(`Failed to generate with Nova Lite: ${error instanceof Error ? error.message : 'Unknown error'}`)
   }
 }

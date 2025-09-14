@@ -19,8 +19,10 @@ interface CustomIntlProviderProps {
 
 export default function CustomIntlProvider({ children }: CustomIntlProviderProps) {
   const [locale, setLocale] = useState<Locale>(defaultLocale)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     // Get locale from localStorage or browser language
     const savedLocale = localStorage.getItem('preferred-language')
     if (savedLocale && (savedLocale === 'en' || savedLocale === 'th')) {
@@ -34,11 +36,18 @@ export default function CustomIntlProvider({ children }: CustomIntlProviderProps
     }
   }, [])
 
+  // During SSR, use default locale to avoid hydration mismatch
+  const currentLocale = mounted ? locale : defaultLocale
+
   return (
     <IntlProvider
-      locale={locale}
-      messages={messages[locale] as any}
+      locale={currentLocale}
+      messages={messages[currentLocale] as any}
       defaultLocale={defaultLocale}
+      onError={(error) => {
+        // Log errors but don't throw to avoid breaking the app
+        console.warn('IntlProvider error:', error)
+      }}
     >
       {children}
     </IntlProvider>

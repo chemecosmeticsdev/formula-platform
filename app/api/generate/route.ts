@@ -5,15 +5,25 @@ import { generateProductImage } from '../../../lib/services/image-generation'
 import SessionStorage from '../../../lib/session-storage'
 
 export async function POST(request: NextRequest) {
+  console.log('=== Generate API Route Called ===')
+
   try {
-    const { productSpec, language = 'en' } = await request.json()
+    const body = await request.json()
+    console.log('Request body:', JSON.stringify(body, null, 2))
+
+    const { productSpec, language = 'en' } = body
 
     if (!productSpec?.trim()) {
+      console.log('Missing product specification')
       return NextResponse.json(
         { error: 'Product specification is required' },
         { status: 400 }
       )
     }
+
+    console.log('Generating product concepts...')
+    console.log('Product spec:', productSpec.trim())
+    console.log('Language:', language)
 
     // Generate AI-powered product concepts using Nova Lite
     const textResult = await generateProductConcepts({
@@ -75,9 +85,26 @@ export async function POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Generation error:', error)
+    console.error('=== Generation Error ===')
+    console.error('Error:', error)
+
+    if (error instanceof Error) {
+      console.error('Error name:', error.name)
+      console.error('Error message:', error.message)
+      console.error('Error stack:', error.stack)
+    }
+
+    // Return more detailed error for debugging
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+
     return NextResponse.json(
-      { error: 'Failed to generate product concepts. Please try again.' },
+      {
+        error: 'Failed to generate product concepts. Please try again.',
+        debug: {
+          message: errorMessage,
+          timestamp: new Date().toISOString()
+        }
+      },
       { status: 500 }
     )
   }

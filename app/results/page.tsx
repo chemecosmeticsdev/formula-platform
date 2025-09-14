@@ -66,8 +66,12 @@ function ResultsContent() {
           <div className="flex items-center justify-center mb-8">
             <Loader2 className="w-12 h-12 text-teal-500 animate-spin" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Generating AI-Powered Concepts...</h1>
-          <p className="text-gray-600">Our AI is analyzing your requirements and creating innovative formulations.</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            <FormattedMessage id="results.loading.title" />
+          </h1>
+          <p className="text-gray-600">
+            <FormattedMessage id="results.loading.subtitle" />
+          </p>
           
           {/* Loading skeleton */}
           <div className="mt-12 grid md:grid-cols-2 gap-8">
@@ -97,21 +101,23 @@ function ResultsContent() {
           <div className="flex items-center justify-center mb-8">
             <AlertCircle className="w-12 h-12 text-red-500" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Error Loading Results</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            <FormattedMessage id="results.error.title" />
+          </h1>
           <p className="text-gray-600 mb-8">{error}</p>
           <div className="space-x-4">
             <button
               onClick={fetchResults}
               className="inline-flex items-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition-colors"
             >
-              Try Again
+              <FormattedMessage id="results.error.tryAgain" />
             </button>
             <Link
               href="/generate"
               className="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold rounded-lg transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Generate
+              <FormattedMessage id="common.backToGenerate" />
             </Link>
           </div>
         </div>
@@ -127,11 +133,13 @@ function ResultsContent() {
             <Beaker className="w-12 h-12 text-teal-500" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            AI-Generated Product Concepts
+            <FormattedMessage id="results.title" />
           </h1>
           {originalSpec && (
             <div className="max-w-3xl mx-auto">
-              <p className="text-sm text-gray-500 mb-2">Based on your specifications:</p>
+              <p className="text-sm text-gray-500 mb-2">
+                <FormattedMessage id="results.basedOn" />
+              </p>
               <div className="bg-gray-50 rounded-lg p-4 text-left text-gray-700">
                 "{originalSpec}"
               </div>
@@ -208,13 +216,15 @@ function ResultsContent() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-600 mb-8">No product concepts were generated. Please try again with different specifications.</p>
+            <p className="text-gray-600 mb-8">
+              <FormattedMessage id="results.empty.message" />
+            </p>
             <Link
               href="/generate"
               className="inline-flex items-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Try Again
+              <FormattedMessage id="results.empty.tryAgain" />
             </Link>
           </div>
         )}
@@ -225,7 +235,7 @@ function ResultsContent() {
             className="inline-flex items-center px-8 py-4 bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold rounded-xl transition-colors"
           >
             <ArrowLeft className="w-5 h-5 mr-3" />
-            Generate New Concepts
+            <FormattedMessage id="common.newConcepts" />
           </Link>
         </div>
       </div>
@@ -241,7 +251,9 @@ export default function ResultsPage() {
           <div className="flex items-center justify-center mb-8">
             <Loader2 className="w-12 h-12 text-teal-500 animate-spin" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Loading Results...</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            <FormattedMessage id="common.loading" />
+          </h1>
         </div>
       </div>
     }>
