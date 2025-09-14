@@ -26,17 +26,45 @@ export async function POST(request: NextRequest) {
     console.log('Language:', language)
 
     // Generate AI-powered product concepts using Nova Lite
-    const textResult = await generateProductConcepts({
-      productSpec: productSpec.trim(),
-      language,
-      maxConcepts: 4
-    })
+    let textResult
+    try {
+      textResult = await generateProductConcepts({
+        productSpec: productSpec.trim(),
+        language,
+        maxConcepts: 4
+      })
 
-    if (!textResult.concepts || textResult.concepts.length === 0) {
-      throw new Error('No concepts were generated')
+      if (!textResult.concepts || textResult.concepts.length === 0) {
+        throw new Error('No concepts were generated')
+      }
+    } catch (awsError) {
+      console.error('AWS Bedrock failed, using fallback concepts:', awsError)
+
+      // Provide fallback concepts when AWS fails
+      const fallbackConcepts = language === 'th' ? [
+        {
+          productName: "สูตรนวัตกรรมรายวัน",
+          description: "ผลิตภัณฑ์ที่ถูกออกแบบทางวิทยาศาสตร์เพื่อตอบสนองความต้องการเฉพาะของคุณ",
+          keyClaims: ["ทดสอบทางคลินิก", "ได้รับการรับรองจากแพทย์ผิวหนัง", "ผลลัพธ์ยาวนาน"],
+          keyIngredients: ["เปปไทด์ขั้นสูง", "สารสกัดจากพืช", "วิตามิน", "สารให้ความชุ่มชื้น"]
+        }
+      ] : [
+        {
+          productName: "Innovative Daily Formula",
+          description: "A scientifically formulated product designed to meet your specific requirements with proven ingredients and advanced delivery systems.",
+          keyClaims: ["Clinically Tested", "Dermatologist Approved", "Long-lasting Results"],
+          keyIngredients: ["Advanced Peptides", "Botanical Extracts", "Vitamins", "Moisturizing Agents"]
+        }
+      ]
+
+      textResult = {
+        concepts: fallbackConcepts,
+        provider: 'fallback-concepts',
+        metadata: { note: 'AWS Bedrock unavailable, using fallback' }
+      }
     }
 
-    // Generate images for each concept using Nova Canvas
+    // Generate images for each concept using Titan Image Generator (with fallback)
     const conceptsWithImages = await Promise.allSettled(
       textResult.concepts.map(async (concept) => {
         try {
@@ -57,7 +85,11 @@ export async function POST(request: NextRequest) {
         } catch (imageError) {
           console.error(`Image generation failed for ${concept.productName}:`, imageError)
           // Return concept without image if image generation fails
-          return concept
+          // This allows the app to still work even if image generation fails
+          return {
+            ...concept,
+            imageBase64: undefined
+          }
         }
       })
     )
@@ -80,8 +112,9 @@ export async function POST(request: NextRequest) {
       count: finalConcepts.length,
       provider: {
         text: textResult.provider,
-        images: 'titan-image' // Default image provider
-      }
+        images: textResult.provider === 'fallback-concepts' ? 'none' : 'titan-image'
+      },
+      fallback: textResult.provider === 'fallback-concepts'
     })
 
   } catch (error) {
