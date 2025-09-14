@@ -10,24 +10,55 @@ export async function GET(request: NextRequest) {
     console.log('BEDROCK_SECRET_ACCESS_KEY:', process.env.BEDROCK_SECRET_ACCESS_KEY ? 'SET' : 'NOT SET')
     console.log('BEDROCK_REGION:', process.env.BEDROCK_REGION || 'us-east-1')
 
-    // Test importing the AWS services
-    const { generateWithNovaLite } = await import('../../../lib/aws/nova-lite')
+    // Test importing AWS SDK directly first
+    console.log('Importing AWS SDK...')
+    const { BedrockRuntimeClient, InvokeModelCommand } = await import('@aws-sdk/client-bedrock-runtime')
+    console.log('✅ AWS SDK imported successfully')
 
-    console.log('Successfully imported Nova Lite service')
+    // Test creating Bedrock client
+    console.log('Creating Bedrock client...')
+    const bedrockClient = new BedrockRuntimeClient({
+      region: process.env.BEDROCK_REGION || 'us-east-1',
+      credentials: {
+        accessKeyId: process.env.BEDROCK_ACCESS_KEY_ID!,
+        secretAccessKey: process.env.BEDROCK_SECRET_ACCESS_KEY!,
+      },
+    })
+    console.log('✅ Bedrock client created successfully')
 
-    // Test a simple Nova Lite call
-    console.log('Testing Nova Lite with simple message...')
-
-    const result = await generateWithNovaLite({
+    // Test Nova Lite directly
+    console.log('Testing Nova Lite directly...')
+    const payload = {
       messages: [
         { role: 'user', content: 'Say "bedrock test successful"' }
       ],
-      temperature: 0.1,
-      maxTokens: 20
+      inferenceConfig: {
+        temperature: 0.1,
+        max_new_tokens: 20,
+        top_p: 0.95,
+      },
+    }
+
+    const command = new InvokeModelCommand({
+      modelId: 'amazon.nova-lite-v1:0',
+      contentType: 'application/json',
+      accept: 'application/json',
+      body: JSON.stringify(payload),
     })
 
+    console.log('Sending request to Nova Lite...')
+    console.log('Payload:', JSON.stringify(payload, null, 2))
+
+    const response = await bedrockClient.send(command)
+    console.log('✅ Nova Lite responded! Status:', response.$metadata.httpStatusCode)
+
+    const responseBody = JSON.parse(new TextDecoder().decode(response.body))
+    console.log('Response body:', JSON.stringify(responseBody, null, 2))
+
+    const content = responseBody.output?.message?.content || responseBody.content || ''
+
     console.log('Nova Lite test successful!')
-    console.log('Response:', result.content)
+    console.log('Response:', content)
 
     return NextResponse.json({
       success: true,
@@ -39,9 +70,9 @@ export async function GET(request: NextRequest) {
       },
       novaLite: {
         success: true,
-        response: result.content,
-        inputTokens: result.inputTokens,
-        outputTokens: result.outputTokens
+        response: content,
+        fullResponse: responseBody,
+        httpStatus: response.$metadata.httpStatusCode
       }
     })
 
