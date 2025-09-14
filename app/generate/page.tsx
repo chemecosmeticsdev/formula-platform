@@ -120,9 +120,11 @@ export default function GeneratePage() {
             <FormattedMessage id="generate.tips.title" />
           </h3>
           <ul className="space-y-2 text-teal-800">
-            {(intl.formatMessage({ id: 'generate.tips.items' }, { returnObjects: true }) as unknown as string[]).map((tip: string, index: number) => (
-              <li key={index}>• {tip}</li>
-            ))}
+            <li>• <FormattedMessage id="generate.tips.items.0" defaultMessage="Include target demographic and skin type" /></li>
+            <li>• <FormattedMessage id="generate.tips.items.1" defaultMessage="Specify desired product format (cream, serum, lotion, etc.)" /></li>
+            <li>• <FormattedMessage id="generate.tips.items.2" defaultMessage="Mention key benefits and claims you want to achieve" /></li>
+            <li>• <FormattedMessage id="generate.tips.items.3" defaultMessage="Note any ingredients to avoid or include" /></li>
+            <li>• <FormattedMessage id="generate.tips.items.4" defaultMessage="Describe usage occasion (morning, evening, daily, etc.)" /></li>
           </ul>
         </div>
       </div>

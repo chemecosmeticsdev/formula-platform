@@ -41,13 +41,13 @@
     },
     "tips": {
       "title": "💡 Pro Tips for Better Results:",
-      "items": [
-        "Include target demographic and skin type",
-        "Specify desired product format (cream, serum, lotion, etc.)",
-        "Mention key benefits and claims you want to achieve",
-        "Note any ingredients to avoid or include",
-        "Describe usage occasion (morning, evening, daily, etc.)"
-      ]
+      "items": {
+        "0": "Include target demographic and skin type",
+        "1": "Specify desired product format (cream, serum, lotion, etc.)",
+        "2": "Mention key benefits and claims you want to achieve",
+        "3": "Note any ingredients to avoid or include",
+        "4": "Describe usage occasion (morning, evening, daily, etc.)"
+      }
     }
   },
   "results": {
