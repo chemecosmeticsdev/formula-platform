@@ -37,7 +37,7 @@ export default function CustomIntlProvider({ children }: CustomIntlProviderProps
   return (
     <IntlProvider
       locale={locale}
-      messages={messages[locale]}
+      messages={messages[locale] as any}
       defaultLocale={defaultLocale}
     >
       {children}
