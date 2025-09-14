@@ -3,12 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd app
-        - npm install --legacy-peer-deps
+        - cd app && npm install --legacy-peer-deps
     build:
       commands:
-        - cd app
-        - npm run build
+        - cd app && npm run build
   artifacts:
     baseDirectory: app/.next
     files:
